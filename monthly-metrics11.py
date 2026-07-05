@@ -66,7 +66,7 @@ fig.add_hline(
     line_color="green",
     line_dash="solid",
     annotation_text=f"Goal ({goal})",
-    annotation_position="top left"
+    annotation_position="bottom left"
 )
 
 fig.update_layout(
