@@ -170,7 +170,7 @@ def get_sit_bug_count():
     return fig
 
 def get_inc_count():
-    df = df_sit_count
+    df = df_inc_count
     
     # Statistics
     mean = df["Value"].mean()
