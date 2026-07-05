@@ -14,7 +14,7 @@ df = pd.DataFrame({
 std = df["Deployment Frequency"].std()
 mean = df["Deployment Frequency"].mean()
 
-ax = sb.lineplot(data=df, x="Day", y="Deployment Frequency", marker="o")
+ax = sb.lineplot(data=df, x="Month", y="Deployment Frequency", marker="o")
 
 ax.axhline(mean, color="green", linestyle="-", label="Mean")
 
