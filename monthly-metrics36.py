@@ -374,8 +374,8 @@ st.set_page_config(layout="wide")
 sprint_row1 = st.container()
 with sprint_row1:
         st.subheader("Delivered = Delivered SP + Support + Bug")
-        st.write("5 Day support = 1 Story point")
-        st.write("2 Night support = 1 Story point")
+        st.write("5 Day support tickets = 1 Story point")
+        st.write("2 Night support tickets = 1 Story point")
         st.write("1 Bug = 1 Story point")
         st.plotly_chart(story_point, width="stretch")
         
