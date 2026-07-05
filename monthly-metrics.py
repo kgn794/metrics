@@ -16,6 +16,5 @@ row = df.iloc[row_index, 1:]
 st.write("Selected Row:")
 st.write(row)
 
-st.line_chart(row)
 st.bar_chart(row)
-st.area_chart(row)
+
