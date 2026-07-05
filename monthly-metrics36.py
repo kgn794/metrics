@@ -301,7 +301,7 @@ def get_story_points():
             y=df["DaySupport"],
             mode="lines+markers",
             name="Day Support",
-            line=dict(color="orange", width=1, dash="dash")
+            line=dict(color="brown", width=1, dash="dash")
         )
     )
     fig.add_trace(
