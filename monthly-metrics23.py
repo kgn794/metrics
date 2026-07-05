@@ -6,7 +6,7 @@ import streamlit as st
 import plotly.graph_objects as go
 
 
- df_rel_count = pd.DataFrame({
+df_rel_count = pd.DataFrame({
         "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
         "Value": [8, 20, 24, 26, 10, 36]
     })
