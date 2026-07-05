@@ -77,8 +77,6 @@ fig.update_layout(
     height=500
 )
 
-st.plotly_chart(fig, use_container_width=True)
-
 # Layout
 col1, col2 = st.columns([1, 2])
 
