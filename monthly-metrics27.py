@@ -5,7 +5,6 @@ import seaborn as sb
 import streamlit as st
 import plotly.graph_objects as go
 
-
 df_rel_count = pd.DataFrame({
         "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
         "Value": [8, 20, 24, 26, 10, 36]
@@ -31,7 +30,7 @@ def get_release_count():
     upper = mean + std
     lower = mean - std
     goal = 19
-    
+    mean_color = "green" if mean >= goal else "red"
     # Create figure
     fig = go.Figure()
     
@@ -41,7 +40,7 @@ def get_release_count():
             x=df["Month"],
             y=df["Value"],
             mode="lines+markers",
-            name="Sales",
+            name="Value",
             line=dict(color="royalblue", width=3)
         )
     )
@@ -50,7 +49,7 @@ def get_release_count():
     fig.add_hline(
         y=mean,
         line_dash="dash",
-        line_color="green",
+        line_color=mean_color,
         annotation_text=f"<b>Average Count = {mean:.2f}</b>",
         annotation_position="top right"
     )
@@ -105,7 +104,7 @@ def get_sit_bug_count():
     upper = mean + std
     lower = mean - std
     goal = 0
-    
+    mean_color = "green" if mean <= goal else "red"
     # Create figure
     fig = go.Figure()
     
@@ -115,7 +114,7 @@ def get_sit_bug_count():
             x=df["Month"],
             y=df["Value"],
             mode="lines+markers",
-            name="Sales",
+            name="Value",
             line=dict(color="royalblue", width=3)
         )
     )
@@ -124,7 +123,7 @@ def get_sit_bug_count():
     fig.add_hline(
         y=mean,
         line_dash="dash",
-        line_color="green",
+        line_color=mean_color,
         annotation_text=f"<b>Average Count = {mean:.2f}</b>",
         annotation_position="top right"
     )
@@ -179,6 +178,7 @@ def get_inc_count():
     upper = mean + std
     lower = mean - std
     goal = 21
+    mean_color = "green" if mean <= goal else "red"
     
     # Create figure
     fig = go.Figure()
@@ -189,7 +189,7 @@ def get_inc_count():
             x=df["Month"],
             y=df["Value"],
             mode="lines+markers",
-            name="Sales",
+            name="Value",
             line=dict(color="royalblue", width=3)
         )
     )
@@ -198,7 +198,7 @@ def get_inc_count():
     fig.add_hline(
         y=mean,
         line_dash="dash",
-        line_color="green",
+        line_color= mean_color,
         annotation_text=f"<b>Average Count = {mean:.2f}</b>",
         annotation_position="top right"
     )
