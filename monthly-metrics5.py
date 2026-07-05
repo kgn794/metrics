@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 
 st.subheader("Deployment Frequency")
 df = pd.DataFrame({
-    "Month": [Jan, Feb, Mar, Apr, May, Jun],
+    "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     "Value": [8, 20, 24, 26, 10, 36]
 })
 
