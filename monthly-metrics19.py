@@ -39,8 +39,12 @@ def get_release_count():
         y=mean,
         line_dash="dash",
         line_color="green",
-        annotation_text=f"Mean = {mean:.2f}",
-        annotation_position="top right"
+        annotation_text=f"<b>Average Count = {mean:.2f}</b>",
+        annotation_position="top right",
+        annotation_font=dict(
+            color="green",
+            size=14
+        )
     )
     
     # +1 Std
