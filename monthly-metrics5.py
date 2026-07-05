@@ -5,15 +5,15 @@ import seaborn as sb
 import streamlit as st
 import plotly.graph_objects as go
 
-# Sample data
+st.subheader("Deployment Frequency")
 df = pd.DataFrame({
-    "Day": [1, 2, 3, 4, 5, 6, 7],
-    "Sales": [100, 120, 150, 130, 170, 160, 180]
+    "Month": [Jan, Feb, Mar, Apr, May, Jun],
+    "Value": [8, 20, 24, 26, 10, 36]
 })
 
 # Statistics
-mean = df["Sales"].mean()
-std = df["Sales"].std()
+mean = df["Value"].mean()
+std = df["Value"].std()
 
 upper = mean + std
 lower = mean - std
@@ -24,8 +24,8 @@ fig = go.Figure()
 # Main line
 fig.add_trace(
     go.Scatter(
-        x=df["Day"],
-        y=df["Sales"],
+        x=df["Month"],
+        y=df["Value"],
         mode="lines+markers",
         name="Sales",
         line=dict(color="royalblue", width=3)
@@ -68,4 +68,4 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
-ax.set_title("Monthly Trend with Statistics")
+
