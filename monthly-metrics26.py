@@ -248,6 +248,7 @@ sit_cnt = get_sit_bug_count()
 inc_cnt = get_inc_count()
 
 # Layout
+st.set_page_config(layout="wide")
 row1 = st.container()
 with row1:
         col1, col2 = st.columns(2)
