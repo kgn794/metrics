@@ -292,7 +292,7 @@ def get_story_points():
             y=df["Bug"],
             mode="lines+markers",
             name="Bug",
-            line=dict(color="red", width=1)
+            line=dict(color="red", width=1, dash="dash")
         )
     )
     fig.add_trace(
@@ -301,7 +301,7 @@ def get_story_points():
             y=df["DaySupport"],
             mode="lines+markers",
             name="Day Support",
-            line=dict(color="orange", width=1)
+            line=dict(color="orange", width=1, dash="dash")
         )
     )
     fig.add_trace(
@@ -310,7 +310,7 @@ def get_story_points():
             y=df["NightSupport"],
             mode="lines+markers",
             name="Night Support",
-            line=dict(color="gray", width=1)
+            line=dict(color="gray", width=1, dash="dash")
         )
     )
     
