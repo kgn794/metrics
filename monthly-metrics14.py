@@ -78,10 +78,8 @@ fig.update_layout(
 )
 
 # Layout
-col1, col2 = st.columns([1, 2])
+row1 = st.container()
+with row1:
+    st.plotly_chart(fig, use_container_width=True)
 
-with col1:
-    st.plotly_chart(fig, use_container_width=True)
-with col2:
-    st.plotly_chart(fig, use_container_width=True)
     
