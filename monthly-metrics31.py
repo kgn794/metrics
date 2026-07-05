@@ -23,7 +23,11 @@ df_inc_count = pd.DataFrame({
 df_story_points = pd.DataFrame({
     "Sprint": ["173", "174", "176", "177", "178", "179", "181", "182", "183", "185"],
     "Committed": [33, 57, 44, 66, 70, 58, 71, 51, 74, 59],
-    "Delivered": [25, 16, 7, 24, 42, 40, 70, 34, 61, 18]
+    "Delivered": [25, 16, 7, 24, 42, 40, 70, 34, 61, 18],
+    "DaySupport": [ 8, 25, 51, 31, 57, 59, 32, 24, 31, 36],
+    "NightSupport" : [ 0, 0, 2, 0, 4, 5, 4, 5, 0, 15],
+    "Bug" : [ 0, 0, 2, 0, 3, 5, 3, 1, 1, 0]
+        
 })
 
 def get_release_count():
@@ -251,10 +255,10 @@ def get_inc_count():
 
 def get_story_points():
     df = df_story_points
-        
+    df["Velocity"] =  df["Delivered"] + df["DaySupport"]/5 + df["NightSupport"]/2 + df["Bug"]
     # Statistics
-    mean = df["Delivered"].mean()
-    std = df["Delivered"].std()
+    mean = df["Velocity"].mean()
+    std = df["Velocity"].std()
     
     upper = mean + std
     lower = mean - std
@@ -276,9 +280,9 @@ def get_story_points():
     fig.add_trace(
         go.Scatter(
             x=df["Sprint"],
-            y=df["Delivered"],
+            y=df["Velocity"],
             mode="lines+markers",
-            name="Delivered SP",
+            name="Delivered SP + Support + Bug",
             line=dict(color="green", width=3)
         )
     )
@@ -342,6 +346,10 @@ st.set_page_config(layout="wide")
 
 sprint_row1 = st.container()
 with sprint_row1:
+        st.subheader("Delivered = Delivered SP + Support + Bug")
+        st.write("5 Day support = 1 Story point")
+        st.write("2 Night support = 1 Story point")
+        st.write("1 Bug = 1 Story point")
         st.plotly_chart(story_point, use_container_width=True)
         
 mon_row1 = st.container()
