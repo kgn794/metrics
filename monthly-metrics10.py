@@ -36,16 +36,16 @@ fig.add_trace(
 # Mean baseline
 fig.add_hline(
     y=mean,
-    line_dash="solid",
+    line_dash="dash",
     line_color="green",
     annotation_text=f"Mean = {mean:.2f}",
-    annotation_position="top left"
+    annotation_position="top right"
 )
 
 # +1 Std
 fig.add_hline(
     y=upper,
-    line_dash="dash",
+    line_dash="dot",
     line_color="orange",
     annotation_text=f"+1 Std = {upper:.2f}",
     annotation_position="top left"
@@ -54,7 +54,7 @@ fig.add_hline(
 # -1 Std
 fig.add_hline(
     y=lower,
-    line_dash="dash",
+    line_dash="dot",
     line_color="orange",
     annotation_text=f"-1 Std = {lower:.2f}",
     annotation_position="bottom left"
@@ -64,9 +64,9 @@ fig.add_hline(
 fig.add_hline(
     y=goal,
     line_color="green",
-    line_dash="dot",
+    line_dash="solid",
     annotation_text=f"Goal ({goal})",
-    annotation_position="top right"
+    annotation_position="top left"
 )
 
 fig.update_layout(
