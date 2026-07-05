@@ -14,8 +14,8 @@ row_index = st.selectbox("Deployment Frequency", df.index)
 row = df.iloc[row_index, 1:]
 
 chart_df = pd.DataFrame({
-    "Month": cols,
-    "Value": row[cols].values
+    "Month": obj_cols,
+    "Value": row[obj_cols].values
 }).set_index("Month")
 
 st.write("Selected Row:")
