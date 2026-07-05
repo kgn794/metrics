@@ -319,8 +319,8 @@ def get_story_points():
         y=goal,
         line_color="green",
         line_dash="solid",
-        annotation_text=f"<b>Goal = {goal}</b>",
-        annotation_position="bottom right",
+        annotation_text=f"<b>Capacity = {goal}</b>",
+        annotation_position="bottom left",
         annotation_font=dict(
             color="green",
             size=14
