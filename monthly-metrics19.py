@@ -75,7 +75,7 @@ def get_release_count():
     )
     
     fig.update_layout(
-        title="Deployment count with Mean and Standard Deviation",
+        title="Release Count",
         xaxis_title="Month",
         yaxis_title="Value",
         template="plotly_white",
