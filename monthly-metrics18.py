@@ -6,8 +6,6 @@ import streamlit as st
 import plotly.graph_objects as go
 
 
-release_count = get_release_count()
-
 def get_release_count():
     df = pd.DataFrame({
         "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -85,6 +83,7 @@ def get_release_count():
     )
     return fig
 
+release_count = get_release_count()
 # Layout
 row1 = st.container()
 with row1:
