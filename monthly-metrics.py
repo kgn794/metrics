@@ -13,8 +13,14 @@ row_index = st.selectbox("Deployment Frequency", df.index)
 
 row = df.iloc[row_index, 1:]
 
+chart_df = df.DataFrame({
+    "Month": cols,
+    "Value": row[cols].values
+}).set_index("Month")
+
 st.write("Selected Row:")
 st.write(row)
+st.write(chart_df)
 
-st.bar_chart(row)
+st.bar_chart(chart_df)
 
