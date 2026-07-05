@@ -65,8 +65,12 @@ fig.add_hline(
     y=goal,
     line_color="green",
     line_dash="solid",
-    annotation_text=f"<b color='green'>Goal = {goal}</b>",
-    annotation_position="bottom left"
+    annotation_text=f"<b>Goal = {goal}</b>",
+    annotation_position="bottom left",
+    annotation_font=dict(
+        color="green",
+        size=14
+    )
 )
 
 fig.update_layout(
