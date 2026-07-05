@@ -242,8 +242,8 @@ def get_inc_count():
     
     fig.update_layout(
         title="Incident Count",
-        xaxis_title="Sprint",
-        yaxis_title="Committed & Delivered",
+        xaxis_title="Month",
+        yaxis_title="Value",
         template="plotly_white",
         height=500
     )
@@ -325,8 +325,8 @@ def get_story_points():
     
     fig.update_layout(
         title="Committed and Delivered Story Point Counts",
-        xaxis_title="Month",
-        yaxis_title="Value",
+        xaxis_title="Sprint",
+        yaxis_title="Committed & Delivered",
         template="plotly_white",
         height=500
     )
