@@ -81,18 +81,7 @@ fig.update_layout(
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.subheader("Statistics")
-    stats = pd.DataFrame({
-        "Metric": ["Goal", "Mean", "Std Dev", "Variance"],
-        "Value": [
-            goal,
-            round(mean, 2),
-            round(std, 2),
-            round(df["Value"].var(), 2)
-        ]
-    })
-    st.table(stats)
-
-with col2:
-    st.subheader("Release Trend")
     st.plotly_chart(fig, use_container_width=True)
+with col2:
+    st.plotly_chart(fig, use_container_width=True)
+    
