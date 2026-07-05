@@ -282,8 +282,17 @@ def get_story_points():
             x=df["Sprint"],
             y=df["Velocity"],
             mode="lines+markers",
-            name="Delivered SP + Support + Bug",
+            name="Delivered SP",
             line=dict(color="green", width=3)
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df["Sprint"],
+            y=df["Bug"],
+            mode="lines+markers",
+            name="Bug",
+            line=dict(color="red", width=1)
         )
     )
     
@@ -320,7 +329,7 @@ def get_story_points():
         line_color="green",
         line_dash="solid",
         annotation_text=f"<b>Capacity = {goal}</b>",
-        annotation_position="bottom left",
+        annotation_position="top left",
         annotation_font=dict(
             color="green",
             size=14
