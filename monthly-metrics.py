@@ -6,4 +6,11 @@ import streamlit as st
 
 df = pd.read_excel("Documents/local-metrics.xlsx", sheet_name="Sheet1")
 
-st.line_chart(df)
+row_index = st.selectbox("Deployment Frequency", df.index)
+
+row = df.iloc[row_index, 1:]
+
+st.write("Selected Row:")
+st.write(row)
+
+st.line_chart(row)
