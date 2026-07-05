@@ -377,20 +377,20 @@ with sprint_row1:
         st.write("5 Day support = 1 Story point")
         st.write("2 Night support = 1 Story point")
         st.write("1 Bug = 1 Story point")
-        st.plotly_chart(story_point, use_container_width=True)
+        st.plotly_chart(story_point, width="stretch")
         
 mon_row1 = st.container()
 with mon_row1:
         col1, col2 = st.columns(2)
         with col1:
-                st.plotly_chart(rel_cnt, use_container_width=True)
+                st.plotly_chart(rel_cnt, width="stretch")
         with col2:
-                st.plotly_chart(sit_cnt, use_container_width=True)
+                st.plotly_chart(sit_cnt, width="stretch")
 mon_row2 = st.container()
 with mon_row2:
         col1, col2 = st.columns(2)
         with col1:
-                st.plotly_chart(inc_cnt, use_container_width=True)
+                st.plotly_chart(inc_cnt, width="stretch")
     
 
     
