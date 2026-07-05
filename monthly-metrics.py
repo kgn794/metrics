@@ -20,5 +20,4 @@ sb.lineplot(
     marker="o",
     ax=ax
 )
-
 st.pyplot(fig)
