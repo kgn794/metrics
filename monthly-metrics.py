@@ -6,4 +6,4 @@ import streamlit as st
 
 df = pd.read_excel("Documents/local-metrics.xlsx", sheet_name="Sheet1")
 
-st.bar_chart(df)
+st.line_chart(df)
