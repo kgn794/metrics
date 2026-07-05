@@ -17,6 +17,7 @@ std = df["Value"].std()
 
 upper = mean + std
 lower = mean - std
+goal = 19
 
 # Create figure
 fig = go.Figure()
@@ -57,6 +58,15 @@ fig.add_hline(
     line_color="orange",
     annotation_text=f"-1 Std = {lower:.2f}",
     annotation_position="bottom left"
+)
+
+# Goal
+fig.add_hline(
+    y=goal,
+    line_color="grean",
+    line_dash="dot",
+    annotation_text=f"Goal ({goal})",
+    annotation_position="top right"
 )
 
 fig.update_layout(
