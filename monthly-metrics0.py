@@ -11,9 +11,8 @@ df = pd.DataFrame({
     "Deployment Frequency": [8, 20, 24, 26, 10, 36]
 })
 
-values = df.loc[0, cols].astype(float)
-std = values.std()
-var = values.var()
+std = df["Deployment Frequency"].std()
+var = df["Deployment Frequency"].var()
 
 fig, ax = plt.subplots()
 
