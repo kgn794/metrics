@@ -13,7 +13,7 @@ row_index = st.selectbox("Deployment Frequency", df.index)
 
 row = df.iloc[row_index, 1:]
 
-chart_df = df.DataFrame({
+chart_df = pd.DataFrame({
     "Month": cols,
     "Value": row[cols].values
 }).set_index("Month")
