@@ -5,7 +5,7 @@ import seaborn as sb
 import streamlit as st
 import plotly.graph_objects as go
 
-st.subheader("Deployment Frequency")
+st.subheader("Release Count")
 df = pd.DataFrame({
     "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     "Value": [8, 20, 24, 26, 10, 36]
@@ -60,9 +60,9 @@ fig.add_hline(
 )
 
 fig.update_layout(
-    title="Sales Trend with Mean and Standard Deviation",
-    xaxis_title="Day",
-    yaxis_title="Sales",
+    title="Deployment count with Mean and Standard Deviation",
+    xaxis_title="Month",
+    yaxis_title="Value",
     template="plotly_white",
     height=500
 )
