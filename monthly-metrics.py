@@ -6,15 +6,19 @@ import streamlit as st
 
 df = pd.read_excel("Documents/local-metrics.xlsx", sheet_name="Sheet1")
 
-obj_cols = df.select_dtypes(include="object").columns
-df[obj_cols] = df[obj_cols].astype(str)
+df = pd.DataFrame({
+    "Month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "Deployment Frequency": [8, 20, 24, 26, 10, 36]
+})
 
-row_index = st.selectbox("Deployment Frequency", df.index)
+fig, ax = plt.subplots()
 
-row = df.iloc[row_index, 1:]
+sb.lineplot(
+    data=df,
+    x="Month",
+    y="Deployment Frequency",
+    marker="o",
+    ax=ax
+)
 
-st.write("Selected Row:")
-st.write(row)
-
-st.bar_chart(row)
-
+st.pyplot(fig)
