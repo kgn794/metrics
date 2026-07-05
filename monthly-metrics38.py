@@ -255,11 +255,10 @@ def get_inc_count():
 
 def get_story_points():
     df = df_story_points
-    df["Velocity"] =  df["Delivered"] + (df["DaySupport"]/5).round(0) + (df["NightSupport"]/2).round(0) + df["Bug"]
-    df["Velocity"] = df["Velocity"].round(0)
+    df["Velocity"] =  df["Delivered"] + df["DaySupport"]/5 + df["NightSupport"]/2 + df["Bug"]
+    df["Velocity"] = df["Velocity"]
     # Statistics
     mean = df["Velocity"].mean()
-    mean = mean.round(0)
     std = df["Velocity"].std()
     
     upper = mean + std
@@ -294,7 +293,7 @@ def get_story_points():
             y=df["Bug"],
             mode="lines+markers",
             name="Bug",
-            line=dict(color="red", width=1, dash="dash")
+            line=dict(color="red", width=1, dash="dot")
         )
     )
     fig.add_trace(
@@ -303,7 +302,7 @@ def get_story_points():
             y=df["DaySupport"],
             mode="lines+markers",
             name="Day Support Tickets",
-            line=dict(color="brown", width=1, dash="dash")
+            line=dict(color="brown", width=1, dash="dot")
         )
     )
     fig.add_trace(
@@ -312,7 +311,7 @@ def get_story_points():
             y=df["NightSupport"],
             mode="lines+markers",
             name="Night Support Tickets",
-            line=dict(color="gray", width=1, dash="dash")
+            line=dict(color="gray", width=1, dash="dot")
         )
     )
     
