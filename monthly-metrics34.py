@@ -295,6 +295,24 @@ def get_story_points():
             line=dict(color="red", width=1)
         )
     )
+    fig.add_trace(
+        go.Scatter(
+            x=df["Sprint"],
+            y=df["DaySupport"],
+            mode="lines+markers",
+            name="Day Support",
+            line=dict(color="orange", width=1)
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            x=df["Sprint"],
+            y=df["NightSupport"],
+            mode="lines+markers",
+            name="Night Support",
+            line=dict(color="gray", width=1)
+        )
+    )
     
     # Mean baseline
     fig.add_hline(
