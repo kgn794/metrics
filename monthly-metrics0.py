@@ -12,27 +12,16 @@ df = pd.DataFrame({
 })
 
 std = df["Deployment Frequency"].std()
-var = df["Deployment Frequency"].var()
+mean = df["Deployment Frequency"].mean()
 
-fig, ax = plt.subplots()
+ax = sb.lineplot(data=df, x="Day", y="Deployment Frequency", marker="o")
 
-sb.lineplot(
-    data=df,
-    x="Month",
-    y="Deployment Frequency",
-    marker="o",
-    ax=ax
-)
+ax.axhline(mean, color="green", linestyle="-", label="Mean")
 
-stats_text = f"Std Dev: {std:.2f} | Variance: {var:.2f}"
-ax.text(
-    0.5, 1.05,
-    stats_text,
-    transform=ax.transAxes,
-    ha="center",
-    fontsize=12,
-    fontweight="bold"
-)
+ax.axhline(mean + std, color="orange", linestyle="--", label="+1 Std")
+ax.axhline(mean - std, color="orange", linestyle="--", label="-1 Std")
+
+ax.legend()
+plt.show()
 
 ax.set_title("Monthly Trend with Statistics")
-st.pyplot(fig)
