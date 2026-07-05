@@ -6,6 +6,9 @@ import streamlit as st
 
 df = pd.read_excel("Documents/local-metrics.xlsx", sheet_name="Sheet1")
 
+obj_cols = df.select_dtypes(include="object").columns
+df[obj_cols] = df[obj_cols].astype(str)
+
 row_index = st.selectbox("Deployment Frequency", df.index)
 
 row = df.iloc[row_index, 1:]
