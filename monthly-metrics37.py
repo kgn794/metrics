@@ -255,9 +255,11 @@ def get_inc_count():
 
 def get_story_points():
     df = df_story_points
-    df["Velocity"] =  df["Delivered"] + df["DaySupport"]/5 + df["NightSupport"]/2 + df["Bug"]
+    df["Velocity"] =  df["Delivered"] + (df["DaySupport"]/5).round(0) + (df["NightSupport"]/2).round(0) + df["Bug"]
+    df["Velocity"] = df["Velocity"].round(0)
     # Statistics
     mean = df["Velocity"].mean()
+    mean = mean.round(0)
     std = df["Velocity"].std()
     
     upper = mean + std
@@ -300,7 +302,7 @@ def get_story_points():
             x=df["Sprint"],
             y=df["DaySupport"],
             mode="lines+markers",
-            name="Day Support",
+            name="Day Support Tickets",
             line=dict(color="brown", width=1, dash="dash")
         )
     )
@@ -309,7 +311,7 @@ def get_story_points():
             x=df["Sprint"],
             y=df["NightSupport"],
             mode="lines+markers",
-            name="Night Support",
+            name="Night Support Tickets",
             line=dict(color="gray", width=1, dash="dash")
         )
     )
