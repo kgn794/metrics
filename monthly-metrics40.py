@@ -113,7 +113,7 @@ def get_sit_bug_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 0
+    goal = 1
     mean_color = "green" if mean <= goal else "red"
     # Create figure
     fig = go.Figure()
@@ -259,6 +259,9 @@ def get_story_points():
     df["Velocity"] = df["Velocity"]
     # Statistics
     mean = df["Velocity"].mean()
+    no_of_sprint = df["Velocity"].count
+    total_leaves = 47
+    mean = mean + (total_leaves/no_of_sprint)
     std = df["Velocity"].std()
     
     upper = mean + std
