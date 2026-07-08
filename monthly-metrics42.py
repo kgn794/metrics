@@ -20,13 +20,22 @@ df_inc_count = pd.DataFrame({
         "Value": [30, 28, 33, 38, 3, 37]
     })
 
-df_story_points = pd.DataFrame({
+df_story_points_bkp = pd.DataFrame({
     "Sprint": ["173", "174", "176", "177", "178", "179", "181", "182", "183", "184", "185"],
     "Committed": [33, 57, 44, 66, 70, 58, 71, 51, 74, 56, 59],
     "Delivered": [25, 16, 7, 24, 42, 40, 70, 34, 61, 24, 18],
     "DaySupport": [ 8, 25, 51, 31, 57, 59, 32, 24, 31, 21, 36],
     "NightSupport" : [ 0, 0, 2, 0, 4, 5, 4, 5, 0, 4, 15],
     "Bug" : [ 0, 0, 2, 0, 3, 5, 3, 1, 1, 1, 0]
+        
+})
+df_story_points = pd.DataFrame({
+    "Sprint": ["177", "178", "179", "181", "182", "183", "184", "185"],
+    "Committed": [66, 70, 58, 71, 51, 74, 56, 59],
+    "Delivered": [24, 42, 40, 70, 34, 61, 24, 18],
+    "DaySupport": [31, 57, 59, 32, 24, 31, 21, 36],
+    "NightSupport" : [ 0, 4, 5, 4, 5, 0, 4, 15],
+    "Bug" : [  0, 3, 5, 3, 1, 1, 1, 0]
         
 })
 
@@ -260,7 +269,7 @@ def get_story_points():
     # Statistics
     mean = df["Velocity"].mean()
     no_of_sprint = df["Velocity"].count()
-    total_leaves = 47
+    total_leaves = 40
     mean = mean + (total_leaves/no_of_sprint)
     std = df["Velocity"].std()
     
