@@ -36,7 +36,7 @@ df_story_points = pd.DataFrame({
     "Delivered": [104, 85, 71, 53, 74, 104],
     "DaySupport": [ 56, 52, 79, 54, 81, 54],
     "NightSupport" : [ 9, 4, 37, 4, 4, 2],
-    "Bug" : [4, 2, 1, 0, 0, 4]
+    "Bug" : [4, 2, 1, 0, 0, 1]
 })
 
 df_story_points_6_months = pd.DataFrame({
@@ -58,7 +58,7 @@ def get_release_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 19
+    goal = 38
     mean_color = "green" if mean >= goal else "red"
     # Create figure
     fig = go.Figure()
@@ -132,7 +132,7 @@ def get_sit_bug_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 1
+    goal = 2
     mean_color = "green" if mean <= goal else "red"
     # Create figure
     fig = go.Figure()
@@ -206,7 +206,7 @@ def get_inc_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 21
+    goal = 42
     mean_color = "green" if mean <= goal else "red"
     
     # Create figure
@@ -285,7 +285,7 @@ def get_story_points():
     
     upper = mean + std
     lower = mean - std
-    goal = 48
+    goal = 96
     mean_color = "green" if mean >= goal else "red"
     # Create figure
     fig = go.Figure()
