@@ -58,7 +58,7 @@ def get_release_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 38
+    goal = 19
     mean_color = "green" if mean >= goal else "red"
     # Create figure
     fig = go.Figure()
@@ -132,7 +132,7 @@ def get_sit_bug_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 2
+    goal = 1
     mean_color = "green" if mean <= goal else "red"
     # Create figure
     fig = go.Figure()
@@ -206,7 +206,7 @@ def get_inc_count():
     
     upper = mean + std
     lower = mean - std
-    goal = 42
+    goal = 21
     mean_color = "green" if mean <= goal else "red"
     
     # Create figure
