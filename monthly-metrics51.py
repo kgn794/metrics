@@ -30,8 +30,16 @@ df_story_points_bkp = pd.DataFrame({
     "Bug" : [  0, 3, 5, 3, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0]
         
 })
-
 df_story_points = pd.DataFrame({
+    "Sprint": ["May", "Jun", "Jul","Aug", "Sep", "Oct"],
+    "Committed": [ 122, 130, 123, 88.5, 96, 96],
+    "Delivered": [104, 85, 71, 53, 74, 104],
+    "DaySupport": [ 56, 52, 79, 54, 81, 54],
+    "NightSupport" : [ 9, 4, 37, 4, 4, 2],
+    "Bug" : [4, 2, 1, 0, 0, 4]
+})
+
+df_story_points_6_months = pd.DataFrame({
     "Sprint": ["187", "188", "189", "190", "191", "192"],
     "Committed": [56, 32.5, 48, 48, 48, 48],
     "Delivered": [25, 28, 51, 23, 57, 47],
